@@ -11,10 +11,10 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
 })
 
-//update post
+//update comment
 router.put('/id', withAuth, (req, res) => {
 })
 
-//delete post
+//delete comment
 router.delete('/:id', (req, res) =>{
 })
