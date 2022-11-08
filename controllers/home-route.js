@@ -8,8 +8,7 @@ router.get('/', async (req, res) => {
     const dbPostData = await Post.findAll({
       include: [
         {
-          model: Post,
-          attributes: ['id', 'comment'],
+          model: User,
         },
       ],
     });
@@ -19,7 +18,7 @@ router.get('/', async (req, res) => {
     );
 
     res.render('homepage', {
-      post,
+      posts,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
@@ -28,20 +27,15 @@ router.get('/', async (req, res) => {
   }
 });
 
+
+
 //Get one post
-//should i be including comment and user model with attributes?
 router.get('/post/:id', withAuth, async (req, res) => {
   try {
     const dbPostData = await Post.findByPk(req.params.id, {
       include: [
         {
-          model: Post,
-          attributes: [
-            'id',
-            'title',
-            'comment',
-            'user_id',
-          ],
+          model: User,
         },
       ],
     });
@@ -53,5 +47,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
 
 module.exports = router;
