@@ -29,7 +29,7 @@ Comment.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'post',
+        model: 'post',  //comments reference posts, in order to describe the post
         key: 'id'
       }
     },

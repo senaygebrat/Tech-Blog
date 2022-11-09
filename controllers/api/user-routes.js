@@ -1,5 +1,4 @@
 const router = require('express').Router();
-// const { rest } = require('lodash');
 const { User } = require('../../models');
 
 //CREATE new user

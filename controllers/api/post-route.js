@@ -10,24 +10,21 @@ const withAuth = require('../../utils/auth');
 //         {
 //           model: User,
 //         }
-//       ]
-//     })
-//   }
-// })
+
 // )
 
 
 //create new post
 router.post('/', async (req, res) => {
-  // try{
-  //   const newPost = await Post.create({
-  //     post_title: req.body.title,
-  //   })
-  //   res.status(200).json(newCategory)
-  // }
-  // catch(err){
-  //   res.status(400).json(err)
-  // }
+  try{
+    const newPost = await Post.create({
+      post_title: req.body.title,
+    })
+    res.status(200).json(newPost)
+  }
+  catch(err){
+    res.status(400).json(err)
+  }
 })
 
 //update post
