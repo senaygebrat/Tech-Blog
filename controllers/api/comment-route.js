@@ -21,7 +21,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-//update comment
+//update comment (edit)
 router.put('/id', withAuth, (req, res) => {
 })
 
